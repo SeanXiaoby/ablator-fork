@@ -132,3 +132,6 @@ dmypy.json
 .pyre/
 
 .vscode
+
+# Mac OS cach
+.DS_Store
