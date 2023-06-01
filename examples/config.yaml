@@ -1,4 +1,4 @@
-experiment_dir: "/tmp/dir"
+experiment_dir: "/tmp/experiments"
 train_config:
   dataset: cifar10
   optimizer_config:
@@ -13,3 +13,5 @@ train_config:
 model_config:
   name: resnet18
 metrics_n_batches: 400
+device: cpu
+amp: false
