@@ -1,0 +1,17 @@
+experiment_dir: "/tmp/experiments"
+train_config:
+  dataset: mnist
+  optimizer_config:
+    name: adam
+    arguments:
+      lr: 0.01
+      weight_decay: 0.0
+  batch_size: 128
+  epochs: 10
+  scheduler_config: null
+  rand_weights_init: true
+model_config:
+  name: lenet5
+metrics_n_batches: 400
+device: cpu
+amp: false
