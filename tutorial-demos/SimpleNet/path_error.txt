@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/tutorial-demos/SimpleNet/simplenet.py", line 122, in <module>
+    config = run(**kwargs)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/tutorial-demos/SimpleNet/simplenet.py", line 113, in run
+    ablator.launch()
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/proto.py", line 81, in launch
+    metrics = self.wrapper.train(run_config=self.run_config, debug=debug)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/wrapper.py", line 667, in train
+    return self.train_loop(smoke_test)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/wrapper.py", line 627, in train_loop
+    self.eval()
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/wrapper.py", line 570, in eval
+    self._train_evaluation_step(smoke_test=smoke_test)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/wrapper.py", line 385, in _train_evaluation_step
+    self._checkpoint()
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/main.py", line 749, in _checkpoint
+    self.checkpoint(is_best=is_best)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/main/model/wrapper.py", line 970, in checkpoint
+    self.logger.checkpoint(
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/modules/loggers/main.py", line 369, in checkpoint
+    futils.save_checkpoint(save_dict, file_path)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/ablator/utils/file.py", line 46, in save_checkpoint
+    torch.save(state, filename)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/torch/serialization.py", line 422, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/torch/serialization.py", line 309, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/Users/boyang/Documents/Research/Ablator-project/ablator-fork/env/lib/python3.10/site-packages/torch/serialization.py", line 287, in __init__
+    super(_open_zipfile_writer_file, self).__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: Parent directory results/1/035a_b5c0/results/1/035a_b5c0/checkpoints does not exist.
