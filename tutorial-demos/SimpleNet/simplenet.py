@@ -56,7 +56,7 @@ class MyModel(nn.Module):
         super().__init__()
         self.model = SimpleCNN()
         self.loss = nn.CrossEntropyLoss()
-        self.optimizer = optim.SGD(self.model.parameters(), lr=0.001, momentum=0.9)
+        # self.optimizer = optim.SGD(self.model.parameters(), lr=0.001, momentum=0.9)
         
     def forward(self, x, labels, custom_input=None):
         # custom_input is for demo purposes only, defined in the dataset wrapper
