@@ -5,7 +5,7 @@ train_config:
     name: sgd
     arguments:
       lr: 0.001
-      momentum: 0.1
+      momentum: 0.05
   batch_size: 64
   epochs: 20
   scheduler_config: null
