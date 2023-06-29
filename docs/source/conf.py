@@ -40,8 +40,7 @@ autodoc_default_options = {
 }
 
 html_title = "Ablator Documentation"
-# html_logo = "https://avatars.githubusercontent.com/u/113263681?s=50&v=4"
-
+html_favicon = '_static/ablator-logo.svg'
 
 # html_theme_options = {
 
@@ -66,12 +65,14 @@ html_theme_options = {
     "repository_url": "https://github.com/fostiropoulos/ablator",
     "use_repository_button": True,
     "logo": {
-        "text": "Ablator",
+        "image_light": "_static/ablator-banner-light.svg",
+        "image_dark": "_static/ablator-banner-dark.svg",
         "link": "index",
         "alt_text": "ablator"
     },
     "search_bar_text": "Search",
     # "primary_sidebar_end": ["theme-version"],
+
 
 }
 
