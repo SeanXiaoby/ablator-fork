@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -19,8 +20,15 @@
             tempInput.select();
             document.execCommand('copy');
             document.body.removeChild(tempInput);
+        }
 
-            alert('Command copied to clipboard!');
+        function navToPath(path, isNewTab = false) {
+            const newHref = window.location.href.split('#')[0] + path;
+            if (isNewTab) {
+                window.open(newHref, '_blank');
+            } else {
+                window.location.href = newHref;
+            }
         }
     </script>
 </head>
@@ -29,7 +37,7 @@
     <div class="page-root">
         <div class="page-contents">
             <div class="banner">
-                <img class="banner-logo" src="../ablator-banner-light.svg" alt="ablator-logo">
+                <img class="banner-image" src="../ablator-banner-light.svg" alt="ablator-logo">
                 <div class="banner-texts">
                     <h2>Welcome to Ablator Documentations!</h2>
                     <p>Ablator is a robust horizontal-scaling platform for machine learning experiments. You can easily
@@ -70,8 +78,7 @@
 
                 <div class="contents-grid">
 
-                    <div class="contents-card"
-                        onclick="window.location.href = `/notebooks/Environment-settings.ipynb`;">
+                    <div class="contents-card" onclick="navToPath(`tutorials`)">
                         <div class="card-title">
                             <h5>
                                 Basic Tutorials
@@ -84,8 +91,7 @@
                             and explained. Each section will contain a simple demo to elaborate the usage.
                         </p>
                     </div>
-                    <div class="contents-card"
-                        onclick="window.location.href = `/notebooks/Searchspace-for-diff-optimizers.ipynb`;">
+                    <div class="contents-card" onclick="navToPath(`/notebooks/Searchspace-for-diff-optimizers.ipynb`);">
                         <div class="card-title">
                             <h5>
                                 Intermediate Tutorials
@@ -97,7 +103,7 @@
                             introduce some intermediate usages and contents of Ablator.
                         </p>
                     </div>
-                    <div class="contents-card" onclick="window.location.href = `/ablator.html`;">
+                    <div class="contents-card" onclick="navToPath(`/ablator.html`);">
                         <div class="card-title">
                             <h5>
                                 Ablator Packages
@@ -111,8 +117,7 @@
                             component of Ablator.
                         </p>
                     </div>
-                    <div class="contents-card"
-                        onclick="window.location.href = `/notebooks/GettingStarted-mode-demos.ipynb`;">
+                    <div class="contents-card" onclick="navToPath(`/notebooks/GettingStarted-mode-demos.ipynb`);">
                         <div class="card-title">
                             <h5>
                                 More Examples
@@ -132,7 +137,7 @@
                     Getting Started
                 </h3>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="navToPath(`/notesbooks/Environment-settings.ipynb`)">
                         <div class="card-title">
                             <h5>
                                 Installations
@@ -140,10 +145,6 @@
                         </div>
                         <div class="feature-codes">
                             $ pip install ablator
-
-                            <div class="banner-codes-icon" onclick="copyToClipboard(`pip install ablator`)">
-                                <img height="100%" width="100%" src="../img/copy-icon.png" alt="copy">
-                            </div>
                         </div>
 
                         <div class="card-texts">
@@ -152,11 +153,9 @@
                             </p>
 
                         </div>
-                        <a class="custom-link" href="/notesbooks/Environment-settings.ipynb">
-                            Other options to install >>
-                        </a>
+
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="navToPath(`/notebooks/GettingStarted.ipynb`)">
                         <div class="card-title feature-card-title">
                             <h5>
                                 Quick Start
@@ -169,11 +168,8 @@
                                 trained and evaluated with Ablator.
                             </p>
                         </div>
-                        <a class="custom-link" href="/notebooks/GettingStarted.ipynb">
-                            Quick Demo >>
-                        </a>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="navToPath(`/tutorials.html`)">
                         <div class="card-title feature-card-title">
                             <h5>
                                 Learn Basics
@@ -184,9 +180,6 @@
                                 For more basic usages of Ablator, please refer to the Basic Tutorials section below.
                             </p>
                         </div>
-                        <a class="custom-link" href="/tutorials.html">
-                            Basic Tutorials >>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -205,7 +198,7 @@
 
 
                 <div class="features-grid">
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card" onclick="navToPath(`/ablator.config.html`)">
                         <div class="card-title">
                             <h5>
                                 Config Package
@@ -217,11 +210,8 @@
                                 Config Package is where Ablator reads and implements the experiment configurations.
                             </p>
                         </div>
-                        <a class="custom-link" href="/ablator.config.ipynb">
-                            Config Package >>
-                        </a>
                     </div>
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card" onclick="navToPath(`/ablator.main.html`)">
                         <div class="card-title">
                             <h5>
                                 Main Package
@@ -234,12 +224,9 @@
                                 integrated.
                             </p>
                         </div>
-                        <a class="custom-link" href="/ablator.main.ipynb">
-                            Main Package >>
-                        </a>
                     </div>
 
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card" onclick="navToPath(`/ablator.modules.html`)">
                         <div class="card-title">
                             <h5>
                                 Modules Package
@@ -251,11 +238,8 @@
                                 Modules Package accommodates the specific modules for execution of the experiments.
                             </p>
                         </div>
-                        <a class="custom-link" href="/ablator.modules.ipynb">
-                            Modules Package >>
-                        </a>
                     </div>
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card" onclick="navToPath(`/ablator.analysis.html`)">
                         <div class="card-title">
                             <h5>
                                 Analysis Package
@@ -267,11 +251,8 @@
                                 Analysis Package is where Ablator analyzes the experiment results.
                             </p>
                         </div>
-                        <a class="custom-link" href="/ablator.analysis.ipynb">
-                            Analysis Package >>
-                        </a>
                     </div>
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card" onclick="navToPath(`/ablator.utils.html`)">
                         <div class="card-title">
                             <h5>
                                 Utils Package
@@ -284,11 +265,9 @@
                                 experiments.
                             </p>
                         </div>
-                        <a class="custom-link" href="/ablator.analysis.ipynb">
-                            Util Package >>
-                        </a>
                     </div>
-                    <div class="feature-card package-card">
+                    <div class="feature-card package-card"
+                        onclick="navToPath(`https://github.com/fostiropoulos/ablator`)">
                         <div class="card-title">
                             <h5>
                                 More to come...
@@ -300,9 +279,6 @@
                                 Ablator is under active development. More features and packages will be added soon...
                             </p>
                         </div>
-                        <a class="custom-link" href="https://github.com/fostiropoulos/ablator">
-                            Source Codes >>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -316,7 +292,8 @@
                 </div>
 
                 <div class="contents-grid">
-                    <div class="contents-card community-card">
+                    <div class="contents-card community-card"
+                        onclick="window.open('https://github.com/fostiropoulos/ablator')">
                         <div class="card-title">
                             <h5>
                                 Visit Ablator on Github
@@ -335,7 +312,7 @@
                                 Repository</button>
                         </div>
                     </div>
-                    <div class="contents-card community-card">
+                    <div class="contents-card community-card" onclick="window.open('https://deep.usc.edu')">
                         <div class="card-title">
                             <h5>
                                 Meet the developers
@@ -354,6 +331,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -28,7 +28,7 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
@@ -55,22 +55,32 @@ html_theme_options = {
     "navbar_persistent": ["search-button"],
     "header_links_before_dropdown": 5,
     "navigation_with_keys": False,
+    "collapse_navigation": True,
     "show_nav_level": 1,
-    "home_page_in_toc": True,
-    "show_navbar_depth": 1,
     "show_toc_level": 2,
-    "repository_url": "https://github.com/fostiropoulos/ablator",
-    "use_repository_button": True,
     "logo": {
         "image_light": "_static/ablator-banner-light.svg",
         "image_dark": "_static/ablator-banner-dark.svg",
         "link": "index",
         "alt_text": "ablator"
     },
-    "search_bar_text": "Search",
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/fostiropoulos/ablator",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+        },
+    ],
+    "icon_links_label": "Quick Links",
+
+}
+
+html_context = {
+    "default_mode": "light"
 }
 
 html_sidebars = {
-    "**": ["search-field.html", "sbt-sidebar-nav.html"],
+    "**": ['search-field', 'globaltoc.html'],
     "index": [],
 }
