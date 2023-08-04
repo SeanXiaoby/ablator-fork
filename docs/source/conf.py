@@ -30,6 +30,12 @@ exclude_patterns = []
 
 html_theme = "sphinx_book_theme"
 html_static_path = ['_static']
+html_css_files = [
+    'css/custom.css',
+]
+html_context = {
+    "default_mode": "light"
+}
 
 numpydoc_show_class_members = False
 numpydoc_class_members_toctree = False
@@ -45,9 +51,9 @@ html_favicon = '_static/ablator-logo.svg'
 html_theme_options = {
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-nav"],
-    "navbar_end": [],
-    "navbar_persistent": [],
-    "header_links_before_dropdown": 3,
+    "navbar_end": ["navbar-icon-links"],
+    "navbar_persistent": ["search-button"],
+    "header_links_before_dropdown": 5,
     "navigation_with_keys": False,
     "show_nav_level": 1,
     "home_page_in_toc": True,
@@ -61,9 +67,10 @@ html_theme_options = {
         "link": "index",
         "alt_text": "ablator"
     },
-    "search_bar_text": "Search"
+    "search_bar_text": "Search",
 }
 
 html_sidebars = {
-    "**": ["navbar-logo.html", "search-field.html", "sbt-sidebar-nav.html"]
+    "**": ["search-field.html", "sbt-sidebar-nav.html"],
+    "index": [],
 }
