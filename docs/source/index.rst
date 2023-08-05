@@ -34,9 +34,15 @@
                         tempInput.select();
                         document.execCommand('copy');
                         document.body.removeChild(tempInput);
-
-                        alert('Command copied to clipboard!');
                   }
+                  function navToPath(path, isNewTab = false) {
+                     const newHref = window.location.href.split('#')[0] + path;
+                     if (isNewTab) {
+                        window.open(newHref, '_blank');
+                     } else {
+                        window.location.href = newHref;
+                     }
+                  }        
                </script>
             </head>
 
@@ -299,42 +305,41 @@
                            </div>
 
                            <div class="contents-grid">
-                              <div class="contents-card community-card"
-                                    onclick="window.open('https://github.com/fostiropoulos/ablator')">
-                                    <div class="card-title">
-                                       <h5>
-                                          Visit Ablator on Github
-                                       </h5>
-                                    </div>
-                                    <div class="card-texts">
-                                       <p>
-                                          Ablator is an open-source project. Visit Ablator on Github to learn more and feel free
-                                          to
-                                          make your contributions.
-                                       </p>
-                                    </div>
-                                    <div>
-                                       <button class="custom-btn custom-btn-block"
-                                          onclick="window.open('https://github.com/fostiropoulos/ablator')">Github
-                                          Repository</button>
-                                    </div>
+                              <div class="contents-card community-card">
+                                 <div class="card-title">
+                                    <h5>
+                                       Visit Ablator on Github
+                                    </h5>
+                                 </div>
+                                 <div class="card-texts">
+                                    <p>
+                                       Ablator is an open-source project. Visit Ablator on Github to learn more and feel free
+                                       to
+                                       make your contributions.
+                                    </p>
+                                 </div>
+                                 <div>
+                                    <button class="custom-btn custom-btn-block"
+                                       onclick="window.open('https://github.com/fostiropoulos/ablator')">Github
+                                       Repository</button>
+                                 </div>
                               </div>
-                              <div class="contents-card community-card" onclick="window.open('https://deep.usc.edu')">
-                                    <div class="card-title">
-                                       <h5>
-                                          Meet the developers
-                                       </h5>
-                                    </div>
-                                    <div class="card-texts">
-                                       <p>
-                                          Ablator is developed and maintained by Deep USC Research Group from University of
-                                          Southern California.
-                                       </p>
-                                    </div>
-                                    <div>
-                                       <button class="custom-btn custom-btn-block"
-                                          onclick="window.open('https://deep.usc.edu')">DeepUSC Research Group</button>
-                                    </div>
+                              <div class="contents-card community-card">
+                                 <div class="card-title">
+                                    <h5>
+                                       Meet the developers
+                                    </h5>
+                                 </div>
+                                 <div class="card-texts">
+                                    <p>
+                                       Ablator is developed and maintained by Deep USC Research Group from University of
+                                       Southern California.
+                                    </p>
+                                 </div>
+                                 <div>
+                                    <button class="custom-btn custom-btn-block"
+                                       onclick="window.open('https://deep.usc.edu')">DeepUSC Research Group</button>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -352,7 +357,7 @@
          Get started <notebooks/GettingStarted.ipynb>
          Basic Tutorials <tutorials>
          Intermediate Tutorials <intermediate_tutorials>
-         Packages <ablator.rst>
+         API Reference <ablator.rst>
          More Example <notebooks/GettingStarted-more-demos.ipynb>
 
 .. Indices and tables

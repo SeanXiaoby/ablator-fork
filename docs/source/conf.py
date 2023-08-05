@@ -33,6 +33,9 @@ html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
+
+html_js_files = ["top-navigation.js"]
+
 html_context = {
     "default_mode": "light"
 }
@@ -50,7 +53,7 @@ html_favicon = '_static/ablator-logo.svg'
 
 html_theme_options = {
     "navbar_start": ["navbar-logo"],
-    "navbar_center": ["navbar-nav"],
+    "navbar_center": ["navbar-nav", "custom_nav_links"],
     "navbar_end": ["navbar-icon-links"],
     "navbar_persistent": ["search-button"],
     "header_links_before_dropdown": 5,
@@ -81,6 +84,8 @@ html_context = {
 }
 
 html_sidebars = {
-    "**": ['search-field', 'globaltoc.html'],
+    "**": ['search-field', 'sidebar-nav-bs'],
     "index": [],
+    "notebooks/GettingStarted.ipynb": [],
+    "notebooks/GettingStarted-more-demos.ipynb": [],
 }
