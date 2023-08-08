@@ -16,10 +16,9 @@
 
    .. raw:: html
          <html lang="en">
+
             <head>
                <meta charset="utf-8">
-               <title>Documentation.</title>
-               
                <link rel="stylesheet" href="./_static/css/index.css">
                <link rel="preconnect" href="https://fonts.googleapis.com">
                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,14 +34,23 @@
                         document.execCommand('copy');
                         document.body.removeChild(tempInput);
                   }
+               </script>
+               <script>
                   function navToPath(path, isNewTab = false) {
-                     const newHref = window.location.href.split('#')[0] + path;
-                     if (isNewTab) {
-                        window.open(newHref, '_blank');
-                     } else {
-                        window.location.href = newHref;
-                     }
-                  }        
+                        const href = window.location.href.split('#')[0];
+                        const paths = href.split('/');
+
+                        if (paths[paths.length - 1].includes('index')) {
+                           paths.pop();
+                        }
+
+                        const newHref = paths.join("/") + (path[0] === '/' ? path : '/' + path);
+                        if (isNewTab) {
+                           window.open(newHref, '_blank');
+                        } else {
+                           window.location.href = newHref;
+                        }
+                  }
                </script>
             </head>
 
@@ -73,9 +81,7 @@
                                        <img class="banner-icon" src="./_static/img/github-mark.png" alt="github">
                                     </a>
                               </div>
-
                            </div>
-
                         </div>
                         <div class="contents">
                            <div class="contents-texts">
@@ -91,7 +97,7 @@
 
                            <div class="contents-grid">
 
-                              <div class="contents-card" onclick="navToPath(`tutorials`)">
+                              <div class="contents-card" onclick="navToPath(`tutorials.html`)">
                                     <div class="card-title">
                                        <h5>
                                           Basic Tutorials
@@ -104,7 +110,7 @@
                                        and explained. Each section will contain a simple demo to elaborate the usage.
                                     </p>
                               </div>
-                              <div class="contents-card" onclick="navToPath(`/notebooks/Searchspace-for-diff-optimizers.ipynb`);">
+                              <div class="contents-card" onclick="navToPath(`intermediate_tutorials.html`);">
                                     <div class="card-title">
                                        <h5>
                                           Intermediate Tutorials
@@ -130,7 +136,7 @@
                                        component of Ablator.
                                     </p>
                               </div>
-                              <div class="contents-card" onclick="navToPath(`/notebooks/GettingStarted-mode-demos.ipynb`);">
+                              <div class="contents-card" onclick="navToPath(`/notebooks/GettingStarted-mode-demos.html`);">
                                     <div class="card-title">
                                        <h5>
                                           More Examples
@@ -150,7 +156,7 @@
                               Getting Started
                            </h3>
                            <div class="features-grid">
-                              <div class="feature-card" onclick="navToPath(`/notesbooks/Environment-settings.ipynb`)">
+                              <div class="feature-card" onclick="navToPath(`/notesbooks/Environment-settings.html`)">
                                     <div class="card-title">
                                        <h5>
                                           Installations
@@ -168,7 +174,7 @@
                                     </div>
 
                               </div>
-                              <div class="feature-card" onclick="navToPath(`/notebooks/GettingStarted.ipynb`)">
+                              <div class="feature-card" onclick="navToPath(`/notebooks/GettingStarted.html`)">
                                     <div class="card-title feature-card-title">
                                        <h5>
                                           Quick Start
@@ -295,7 +301,6 @@
                               </div>
                            </div>
                         </div>
-
                         <div class="community">
                            <div class="contents-texts">
                               <h3>
@@ -306,46 +311,47 @@
 
                            <div class="contents-grid">
                               <div class="contents-card community-card">
-                                 <div class="card-title">
-                                    <h5>
-                                       Visit Ablator on Github
-                                    </h5>
-                                 </div>
-                                 <div class="card-texts">
-                                    <p>
-                                       Ablator is an open-source project. Visit Ablator on Github to learn more and feel free
-                                       to
-                                       make your contributions.
-                                    </p>
-                                 </div>
-                                 <div>
-                                    <button class="custom-btn custom-btn-block"
-                                       onclick="window.open('https://github.com/fostiropoulos/ablator')">Github
-                                       Repository</button>
-                                 </div>
+                                    <div class="card-title">
+                                       <h5>
+                                          Visit Ablator on Github
+                                       </h5>
+                                    </div>
+                                    <div class="card-texts">
+                                       <p>
+                                          Ablator is an open-source project. Visit Ablator on Github to learn more and feel free
+                                          to
+                                          make your contributions.
+                                       </p>
+                                    </div>
+                                    <div>
+                                       <button class="custom-btn custom-btn-block"
+                                          onclick="window.open('https://github.com/fostiropoulos/ablator')">Github
+                                          Repository</button>
+                                    </div>
                               </div>
                               <div class="contents-card community-card">
-                                 <div class="card-title">
-                                    <h5>
-                                       Meet the developers
-                                    </h5>
-                                 </div>
-                                 <div class="card-texts">
-                                    <p>
-                                       Ablator is developed and maintained by Deep USC Research Group from University of
-                                       Southern California.
-                                    </p>
-                                 </div>
-                                 <div>
-                                    <button class="custom-btn custom-btn-block"
-                                       onclick="window.open('https://deep.usc.edu')">DeepUSC Research Group</button>
-                                 </div>
+                                    <div class="card-title">
+                                       <h5>
+                                          Meet the developers
+                                       </h5>
+                                    </div>
+                                    <div class="card-texts">
+                                       <p>
+                                          Ablator is developed and maintained by Deep USC Research Group from University of
+                                          Southern California.
+                                       </p>
+                                    </div>
+                                    <div>
+                                       <button class="custom-btn custom-btn-block"
+                                          onclick="window.open('https://deep.usc.edu')">DeepUSC Research Group</button>
+                                    </div>
                               </div>
                            </div>
                         </div>
                   </div>
                </div>
             </body>
+
          </html>
 
 .. only:: sidebar
