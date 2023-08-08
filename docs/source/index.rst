@@ -136,7 +136,7 @@
                                        component of Ablator.
                                     </p>
                               </div>
-                              <div class="contents-card" onclick="navToPath(`/notebooks/GettingStarted-mode-demos.html`);">
+                              <div class="contents-card" onclick="navToPath(`/notebooks/GettingStarted-more-demos.html`);">
                                     <div class="card-title">
                                        <h5>
                                           More Examples
@@ -156,7 +156,7 @@
                               Getting Started
                            </h3>
                            <div class="features-grid">
-                              <div class="feature-card" onclick="navToPath(`/notesbooks/Environment-settings.html`)">
+                              <div class="feature-card" onclick="navToPath(`/notebooks/Environment-settings.html`)">
                                     <div class="card-title">
                                        <h5>
                                           Installations
@@ -286,7 +286,7 @@
                                     </div>
                               </div>
                               <div class="feature-card package-card"
-                                    onclick="navToPath(`https://github.com/fostiropoulos/ablator`)">
+                                    onclick="window.open(`https://github.com/fostiropoulos/ablator`)">
                                     <div class="card-title">
                                        <h5>
                                           More to come...
